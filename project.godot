@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="AbsoluteGameJam"
-run/main_scene="uid://cerip1k6h7gyu"
+run/main_scene="uid://b8pu10stmw5kt"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

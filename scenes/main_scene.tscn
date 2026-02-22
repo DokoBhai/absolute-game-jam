@@ -7,8 +7,7 @@
 [node name="Node2D" type="Node2D" unique_id=625960815]
 
 [node name="Player" parent="." unique_id=787630636 instance=ExtResource("1_w2twt")]
-position = Vector2(-651, -1088)
-scale = Vector2(4, 4)
+position = Vector2(558, 150)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=738004756]
 
