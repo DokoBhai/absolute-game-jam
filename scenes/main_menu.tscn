@@ -25,6 +25,7 @@ offset_bottom = 256.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(211, 112)
+theme_override_colors/icon_hover_color = Color(0.48178947, 0.48178947, 0.48178947, 1)
 toggle_mode = true
 icon = ExtResource("1_l6cm7")
 flat = true
