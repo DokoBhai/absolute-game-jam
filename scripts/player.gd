@@ -3,7 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 400.0
 const JUMP_VELOCITY = -400.0
-
+const ACCELERATION = 0.1
+const DECELERATION = 0.1
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -18,8 +19,13 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = lerp(velocity.x, SPEED * direction, ACCELERATION)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = lerp(velocity.x, SPEED * direction, DECELERATION)
+		
+	if Input.is_action_pressed("move_down") and is_on_floor():
+		$Sprite2D.scale.y = 0.05
+	else:
+		$Sprite2D.scale.y = 0.1
 
 	move_and_slide()
