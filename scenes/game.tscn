@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://c4camrmnpmod6" path="res://scripts/general/player_core.gd" id="3_p57ef"]
 [ext_resource type="Script" uid="uid://c7k22u6kafxi4" path="res://scripts/classes/states/idle.gd" id="4_iywne"]
 [ext_resource type="Script" uid="uid://curu4s03rj2u7" path="res://scripts/classes/states/moving.gd" id="5_p57ef"]
-[ext_resource type="Script" uid="uid://bxlr5l8dnv862" path="res://scripts/classes/states/jumping.gd" id="7_u5sy4"]
+[ext_resource type="Script" uid="uid://v3vrix7wbowb" path="res://scripts/classes/states/jumping.gd" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("1_lnu2h")
@@ -187,19 +187,18 @@ script = ExtResource("3_p57ef")
 
 [node name="GroundStates" parent="Player" unique_id=334839464 node_paths=PackedStringArray("initial_state") instance=ExtResource("3_lnu2h")]
 position = Vector2(25.47998, 133.9)
-initial_state = NodePath("Idle")
+initial_state = NodePath("IdleState")
 
-[node name="Idle" type="Node" parent="Player/GroundStates" unique_id=721939841 node_paths=PackedStringArray("player")]
+[node name="IdleState" type="Node" parent="Player/GroundStates" unique_id=721939841 node_paths=PackedStringArray("player")]
 script = ExtResource("4_iywne")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://c7k22u6kafxi4"
 
-[node name="Moving" type="Node" parent="Player/GroundStates" unique_id=929111917 node_paths=PackedStringArray("player")]
+[node name="MovingState" type="Node" parent="Player/GroundStates" unique_id=929111917 node_paths=PackedStringArray("player")]
 script = ExtResource("5_p57ef")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://curu4s03rj2u7"
 
-[node name="Jumping" type="Node" parent="Player/GroundStates" unique_id=915140141 node_paths=PackedStringArray("player")]
+[node name="JumpingState" type="Node" parent="Player/GroundStates" unique_id=683354297]
 script = ExtResource("7_u5sy4")
-player = NodePath("../..")
-metadata/_custom_type_script = "uid://bxlr5l8dnv862"
+metadata/_custom_type_script = "uid://v3vrix7wbowb"

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cerip1k6h7gyu"]
 
 [ext_resource type="PackedScene" uid="uid://be2eik1tlj2sd" path="res://object_nodes/characters/player2.tscn" id="1_pw63i"]
+[ext_resource type="Texture2D" uid="uid://bi3mkbupoktbw" path="res://assets/sprites/platforms.png" id="2_7ykc4"]
 [ext_resource type="Texture2D" uid="uid://djc2oh05d5e5d" path="res://icon.svg" id="2_pw63i"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w2twt"]
@@ -18,6 +19,13 @@ position = Vector2(558, 150)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1239960464]
 position = Vector2(565, 404)
 shape = SubResource("WorldBoundaryShape2D_w2twt")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1221039186]
+position = Vector2(567, 460)
+scale = Vector2(27.580648, 10.3)
+texture = ExtResource("2_7ykc4")
+region_enabled = true
+region_rect = Rect2(17, 0, 31, 10)
 
 [node name="block1" type="StaticBody2D" parent="." unique_id=641812198]
 

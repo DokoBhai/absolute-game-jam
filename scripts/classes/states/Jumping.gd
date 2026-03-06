@@ -1,5 +1,5 @@
 extends State
-class_name Jumping
+class_name JumpingState
 
 @export var player: CharacterBody2D
 @export var MOVE_SPEED := 100
@@ -11,7 +11,7 @@ func enter():
 
 func update(_delta: float):
 	if player.is_on_floor():
-		Transition.emit(self, "Idle")
+		Transition.emit(self, "IdleState")
 
 func physics_update(_delta: float):
 	var direction = get_move_direction()

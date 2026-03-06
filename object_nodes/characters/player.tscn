@@ -1,66 +1,23 @@
 [gd_scene format=3 uid="uid://ut4tbhsaspdr"]
 
 [ext_resource type="Script" uid="uid://dxulspu0r3teu" path="res://scripts/general/character_body_2d.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://de448ke0k1bgc" path="res://assets/sprites/knight.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://dbr2disav8vfo" path="res://temp.png" id="2_qwbsm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u5sy4"]
-atlas = ExtResource("2_qhqgy")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gee14"]
-atlas = ExtResource("2_qhqgy")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0tnpc"]
-atlas = ExtResource("2_qhqgy")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vtaks"]
-atlas = ExtResource("2_qhqgy")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_kvpfn"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u5sy4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gee14")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0tnpc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vtaks")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 10.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"Running",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwb40"]
-size = Vector2(9, 17)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mufel"]
+height = 34.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1925105641]
 collision_layer = 2
 script = ExtResource("1_g2els")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=486008905]
-position = Vector2(0, -13)
-sprite_frames = SubResource("SpriteFrames_kvpfn")
-animation = &"Idle"
-autoplay = "Idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=186273976]
-position = Vector2(-0.5, -9.5)
-shape = SubResource("RectangleShape2D_mwb40")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1152043165]
 position = Vector2(140, 34)
 position_smoothing_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=30498298]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_qwbsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=186273976]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_mufel")
