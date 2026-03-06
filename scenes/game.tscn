@@ -199,6 +199,7 @@ script = ExtResource("5_p57ef")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://curu4s03rj2u7"
 
-[node name="JumpingState" type="Node" parent="Player/GroundStates" unique_id=683354297]
+[node name="JumpingState" type="Node" parent="Player/GroundStates" unique_id=683354297 node_paths=PackedStringArray("player")]
 script = ExtResource("7_u5sy4")
+player = NodePath("../..")
 metadata/_custom_type_script = "uid://v3vrix7wbowb"
