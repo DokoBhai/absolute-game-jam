@@ -1,24 +1,20 @@
 extends State
 class_name JumpingState
 
-@export var player: CharacterBody2D
-@export var MOVE_SPEED := 100
-@export var JUMP_VELOCITY = -300.0
-
 func enter():
 	print("entered Jumping state!")
-	player.velocity.y = JUMP_VELOCITY
+	subject.velocity.y = subject.jump_velocity
 
 func update(_delta: float):
 	if Input.is_action_just_pressed("mouse_left"):
 		Transition.emit(self, "GrapplingState")
 	
-	if player.is_on_floor():
+	if subject.is_on_floor():
 		Transition.emit(self, "IdleState")
 
 func physics_update(_delta: float):
 	var direction = get_move_direction()
-	player.velocity.x = direction * MOVE_SPEED
+	subject.velocity.x = direction * subject.movement_speed
 
 func get_move_direction():
 	return Input.get_axis("move_left", "move_right")

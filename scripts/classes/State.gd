@@ -1,6 +1,7 @@
 class_name State
 extends Node
 
+var subject: CharacterBody2D
 signal Transition
 
 func enter():

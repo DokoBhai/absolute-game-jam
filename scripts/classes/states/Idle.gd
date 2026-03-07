@@ -1,8 +1,6 @@
 extends State
 class_name IdleState
 
-@export var player: CharacterBody2D
-
 func enter():
 	print("entered idle state!")
 
@@ -10,7 +8,7 @@ func update(_delta: float):
 	if Input.is_action_just_pressed("mouse_left"):
 		Transition.emit(self, "GrapplingState")
 	
-	if Input.is_action_just_pressed("jump") and player.is_on_floor():
+	if Input.is_action_just_pressed("jump") and subject.is_on_floor():
 		Transition.emit(self, "JumpingState")
 		return
 	
@@ -18,4 +16,4 @@ func update(_delta: float):
 		Transition.emit(self, "MovingState")
 		
 func physics_update(_delta: float):
-	player.velocity.x = move_toward(player.velocity.x, 0, 100)
+	subject.velocity.x = move_toward(subject.velocity.x, 0, 100)

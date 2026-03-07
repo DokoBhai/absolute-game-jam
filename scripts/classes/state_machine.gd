@@ -5,11 +5,15 @@ var current_state: State
 var states: Dictionary
 @export var initial_state: State
 
+# will probably have to change later for enemies
+@export var subject: CharacterBody2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
+			child.subject = subject
 			child.Transition.connect(on_transition)
 	
 	if initial_state:
