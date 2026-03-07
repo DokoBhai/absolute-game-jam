@@ -51,3 +51,6 @@ func update_rope(delta):
 	
 	line.set_point_position(0, line.get_parent().to_local(targetPosition))
 	subject.velocity += force * delta
+
+func get_move_direction():
+	return Input.get_axis("move_left", "move_right")

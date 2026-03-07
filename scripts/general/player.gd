@@ -13,16 +13,17 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed("move_up") && (is_on_floor() || gc.launched):
+	if Input.is_action_just_pressed("jump") && (is_on_floor() || gc.launched):
 		velocity.y += JUMP_VELOCITY
 		gc.retract()
 
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = lerp(velocity.x, SPEED * direction, ACCELERATION)
+		print(velocity.x)
 	else:
 		velocity.x = lerp(velocity.x, SPEED * direction, DECELERATION)
-		
+		print(velocity.x)
 	if Input.is_action_pressed("move_down") && is_on_floor():
 		$Sprite2D.scale.y = 0.05
 	else:

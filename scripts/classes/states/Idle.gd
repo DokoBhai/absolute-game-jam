@@ -16,4 +16,8 @@ func update(_delta: float):
 		Transition.emit(self, "MovingState")
 		
 func physics_update(_delta: float):
-	subject.velocity.x = move_toward(subject.velocity.x, 0, 100)
+	subject.velocity.x = lerp(
+		subject.velocity.x,
+		0.0,
+		subject.deceleration
+	)

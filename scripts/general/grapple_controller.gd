@@ -7,7 +7,6 @@ extends Node2D
 @onready var ray := $RayCast2D
 @onready var player := get_parent()
 @onready var rope := $Line2D
-@onready var color: ColorRect = get_parent().get_parent().get_node("ColorRect")
 var launched = false
 var target: Vector2
 
@@ -29,7 +28,6 @@ func launch():
 	if ray.is_colliding():
 		launched = true
 		target = ray.get_collision_point()
-		color.position = target
 
 func retract():
 	launched = false
@@ -55,5 +53,4 @@ func handle_grapple(delta):
 	update_rope()
 
 func update_rope():
-	print(target)
 	rope.set_point_position(0, to_local(target))

@@ -16,8 +16,12 @@ func physics_update(_delta: float):
 	if direction == 0:
 		Transition.emit(self, "IdleState")
 		return
-		
-	subject.velocity.x = direction * subject.movement_speed
-
+	
+	subject.velocity.x = lerp(
+		subject.velocity.x,
+		subject.movement_speed * direction,
+		subject.acceleration
+	)
+	
 func get_move_direction():
 	return Input.get_axis("move_left", "move_right")

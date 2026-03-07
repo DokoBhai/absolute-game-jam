@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export_group("Movement Settings")
 @export var movement_speed = 100
+@export var acceleration = 0.1
+@export var deceleration = 0.1
 @export var jump_velocity = -300
 @export var air_resistance = 2.0
 
