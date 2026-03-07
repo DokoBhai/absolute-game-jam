@@ -36,3 +36,7 @@ shape = SubResource("RectangleShape2D_7ykc4")
 [node name="Sprite2D" type="Sprite2D" parent="block1" unique_id=1330773377]
 position = Vector2(913, 157)
 texture = ExtResource("2_pw63i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=525572157]
+offset_right = 40.0
+offset_bottom = 40.0

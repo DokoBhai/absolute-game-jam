@@ -7,6 +7,9 @@ func enter():
 	print("entered idle state!")
 
 func update(_delta: float):
+	if Input.is_action_just_pressed("mouse_left"):
+		Transition.emit(self, "GrapplingState")
+	
 	if Input.is_action_just_pressed("jump") and player.is_on_floor():
 		Transition.emit(self, "JumpingState")
 		return
