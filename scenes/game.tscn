@@ -187,7 +187,9 @@ tile_set = SubResource("TileSet_p57ef")
 [node name="Player" parent="." unique_id=1925105641 instance=ExtResource("2_lnu2h")]
 position = Vector2(209, 165)
 script = ExtResource("3_p57ef")
-movement_speed = 100
+movement_speed = 300
+acceleration = 0.1
+deceleration = 0.1
 jump_velocity = -300
 air_resistance = 2.0
 rest_length = 10.0
