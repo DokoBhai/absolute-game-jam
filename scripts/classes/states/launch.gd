@@ -21,11 +21,13 @@ func enter():
 	ray.force_raycast_update()
 	if ray.is_colliding():
 		var anchor = ray.get_collision_point()
-		var distance = subject.global_position.distance_to(anchor)
-		var direction = subject.global_position.direction_to(anchor)
-		
-		subject.velocity = direction * distance * subject.pull_strength
-		color.position = anchor
+
+		var offset = anchor - subject.global_position
+		var direction = offset.normalized()
+		var distance = offset.length()
+
+		var speed = min(distance * subject.pull_strength, 1000)
+		subject.velocity = direction * speed
 		
 		Transition.emit(self, "AirborneState")
 	else:
