@@ -9,6 +9,7 @@ extends CharacterBody2D
 
 @export_group("Grappling Settings")
 @export var rest_length = 10.0
+@export var pull_strength = 1
 @export var stiffness = 20.0
 @export var damping = 2.0
 @export var max_rope_force = 6000
