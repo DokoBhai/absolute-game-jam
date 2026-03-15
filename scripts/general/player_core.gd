@@ -8,11 +8,9 @@ extends CharacterBody2D
 @export var air_resistance = 2.0
 
 @export_group("Grappling Settings")
-@export var rest_length = 10.0
 @export var pull_strength = 1
-@export var stiffness = 20.0
-@export var damping = 2.0
 @export var max_rope_force = 6000
+@export var max_velocity = 10000
 
 # will probably have to add more later
 func _physics_process(delta: float) -> void:

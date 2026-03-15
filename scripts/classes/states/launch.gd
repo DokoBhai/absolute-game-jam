@@ -27,7 +27,8 @@ func enter():
 		var distance = offset.length()
 
 		var speed = min(distance * subject.pull_strength, 1000)
-		subject.velocity = direction * speed
+		subject.velocity += direction * speed
+		subject.velocity = subject.velocity.normalized() * min(subject.velocity.length(),subject.max_velocity)
 		
 		Transition.emit(self, "AirborneState")
 	else:
