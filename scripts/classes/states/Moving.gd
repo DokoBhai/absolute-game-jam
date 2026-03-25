@@ -1,6 +1,8 @@
 extends State
 class_name MovingState
 
+@onready var anim_sprite = get_parent().get_parent().get_node("AnimatedSprite2D")
+
 func enter():
 	print("entered moving state!")
 
@@ -25,6 +27,9 @@ func physics_update(_delta: float):
 		subject.movement_speed * direction,
 		subject.acceleration
 	)
+	
+	anim_sprite.play("walk")
+	
 	
 func get_move_direction():
 	return Input.get_axis("move_left", "move_right")
